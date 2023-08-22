@@ -12,3 +12,4 @@ C:\Users\HP\Documents\Adv .Net\NewsApp\DAL\obj\Debug\DAL.dll
 C:\Users\HP\Documents\Adv .Net\NewsApp\DAL\obj\Debug\DAL.pdb
 C:\Users\HP\Documents\Adv .Net\NewsApp\DAL\obj\Debug\DAL.Migrations.InitialDB01.resources
 C:\Users\HP\Documents\Adv .Net\NewsApp\DAL\obj\Debug\DAL.csproj.GenerateResource.cache
+C:\Users\HP\Documents\Adv .Net\NewsApp\DAL\obj\Debug\DAL.Migrations.UserTokenupdated.resources

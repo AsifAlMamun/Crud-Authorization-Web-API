@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using BLL.DTOs;
+using DAL;
 using DAL.EF.Models;
 using DAL.Repos;
 using System;
@@ -15,7 +16,7 @@ namespace BLL.Services
 
         public static List<CategoryDTO> Get()
         {
-            var data = CategoryRepo.Get();
+            var data = DataAccessFactory.CategoryData().Get();
             var config = new MapperConfiguration(cfg =>
             {
                 cfg.CreateMap<Category, CategoryDTO>();
@@ -28,7 +29,7 @@ namespace BLL.Services
     
         public static CategoryDTO Get(int id)
         {
-            var data = CategoryRepo.Get(id);
+            var data = DataAccessFactory.CategoryData().Get(id);
             var config = new MapperConfiguration(cfg =>
             {
                 cfg.CreateMap<Category, CategoryDTO>();
@@ -40,7 +41,7 @@ namespace BLL.Services
         }
         public static CategoryDTO GetWithNews(int id)
         {
-            var data = CategoryRepo.Get(id);
+            var data = DataAccessFactory.CategoryData().Get(id);
             var config = new MapperConfiguration(cfg =>
             {
                 cfg.CreateMap<Category, CategoryNewsDTO>();

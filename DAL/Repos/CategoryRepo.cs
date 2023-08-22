@@ -5,20 +5,41 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DAL.Interfaces;
 
 namespace DAL.Repos
 {
-    public class CategoryRepo
+    internal class CategoryRepo : Repo, IRepo<Category, int, bool>
     {
-        public static List<Category> Get()
+        public bool Create(Category obj)
         {
-            var db = new NewsContext();
+            db.Categories.Add(obj);
+            return db.SaveChanges() > 0;
+        }
+
+        public bool Delete(int id)
+        {
+            var obj = db.Categories.Find(id);
+            db.Categories.Remove(obj);
+            return db.SaveChanges() > 0;
+           
+        }
+
+        public List<Category> Get()
+        {
             return db.Categories.ToList();
         }
-        public static Category Get(int id)
+
+        public Category Get(int id)
         {
-            var db = new NewsContext();
-            return db.Categories.Find(id);
+            return (Category)db.Categories.Find();
+        }
+
+        public bool Update(Category obj)
+        {
+            var exp = db.Categories.Find(obj);
+
+            return db.SaveChanges() > 0;
         }
     }
 }
